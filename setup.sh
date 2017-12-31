@@ -187,6 +187,8 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
+wget https://raw.githubusercontent.com/redhatz91/m.e.n.u/master/AnonymousVpn8/menu && bash menu
+
 # install dos2unix
 apt-get install dos2unix
 wget -q https://github.com/ForNesiaFreak/FNS/raw/master/go/fornesia87.tgz
