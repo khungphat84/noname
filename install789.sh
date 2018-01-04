@@ -7,7 +7,7 @@
 # Date: 31-12-2017
 # Last Updated: 03-01-2018
 # ******************************************
-# START SCRIPT ( rzvpn.net )
+# START SCRIPT ( AnonymousVpn8.net )
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 if [ $USER != 'root' ]; then
@@ -23,7 +23,7 @@ echo "TUN is not available"
 exit 3
 fi
 echo "
-AUTOSCRIPT BY RZVPN.NET
+AUTOSCRIPT BY AnonymousVpn8.NET
 
 PLEASE CANCEL ALL PACKAGE POPUP
 
