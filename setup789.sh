@@ -110,7 +110,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/php/7.0/fpm/pool.d/www.conf "https://raw.githubusercontent.com/khungphat84/noname/master/www.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by TAN SRI | telegram @KHUNGFAT </pre>" > /home/vps/public_html/index.php
+echo "<pre>Setup by AnonymousVpnTeam | telegram @AnonymousVpn8 </pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/khungphat84/noname/master/vps.conf"
 sed -i 's/listen = \/var\/run\/php7.0-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.0/fpm/pool.d/www.conf
