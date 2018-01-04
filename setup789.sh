@@ -90,8 +90,8 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://https://raw.githubusercontent.com/khungphat84/noname/master/squid.conf"
-wget -O /etc/squid/squid.conf "http://https://raw.githubusercontent.com/khungphat84/noname/master/squid.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/khungphat84/noname/master/squid.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/khungphat84/noname/master/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
 
@@ -135,8 +135,16 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
-# badgwp
-# badvpncdapt-get -y install cmake make gccwget https://raw.githubusercontent.com/khungphat84/noname/master/badvpn-1.999.127.tar.bz2tar xf badvpn-1.999.127.tar.bz2mkdir badvpn-buildcd badvpn-buildcmake ~/badvpn-1.999.127 -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1make installscreen badvpn-udpgw --listen-addr 127.0.0.1:7300 > /dev/null &cd
+# install badvpn
+apt-get -y install cmake make gcc
+wget https://raw.githubusercontent.com/khungphat84/noname/master/badvpn-1.999.127.tar.bz2
+tar xf badvpn-1.999.127.tar.bz2
+mkdir badvpn-build
+cd badvpn-build
+cmake ~/badvpn-1.999.127 -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1
+make install
+screen badvpn-udpgw --listen-addr 127.0.0.1:7300 > /dev/null &
+cd
 
 # ajksn
 apt-get -y install fail2ban;service fail2ban restart
