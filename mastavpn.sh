@@ -60,14 +60,6 @@ apt-get -y autoremove;
 apt-get -y install wget curl;
 echo "
 "
-
-sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
-wget -qO - http://www.webmin.com/jcameron-key.asc | apt-key add -
-apt-get update;
-apt-get -y autoremove;
-apt-get -y install wget curl;
-echo "
-"
 # text gambar
 apt-get install boxes
 # color text
